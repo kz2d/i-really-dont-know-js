@@ -46,7 +46,6 @@ module.exports = class {
             next: () => ({ value: object[++index], done: !(index in object) })
         };
     };
-    [Symbol.toStringTag] = 'set'
+    [Symbol.toStringTag] = '^_^'
 
 }
-
