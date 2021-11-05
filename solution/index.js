@@ -1,4 +1,4 @@
-class MySet {
+module.exports = class {
     object = []
     constructor(array = []) {
         for (const i of array) {
@@ -49,6 +49,4 @@ class MySet {
     [Symbol.toStringTag] = 'Set'
 }
 
-
-module.exports = MySet;
 
