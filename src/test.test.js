@@ -1,6 +1,6 @@
 
 
-const MySet = require('./index')
+const MySet = require('../solution/index')
 
 // тесты
 describe("MySet ow eah", () => {

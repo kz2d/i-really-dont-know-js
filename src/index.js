@@ -46,7 +46,7 @@ class MySet {
             next: () => ({ value: object[++index], done: !(index in object) })
         };
     };
-    // [Symbol.toStringTag] = 'Set'
+    [Symbol.toStringTag] = 'Set'
 }
 
 
