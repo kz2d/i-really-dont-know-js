@@ -1,4 +1,4 @@
-module.exports = class {
+module.exports = class MySet {
     object = []
     constructor(array = []) {
         for (const i of array) {
@@ -6,7 +6,8 @@ module.exports = class {
         }
     }
     has(item) {
-        return this.object.filter((a) => a === item).length > 0
+        return this.object.includes(item)
+
     }
 
     add(item) {
@@ -15,7 +16,7 @@ module.exports = class {
         return this
     }
     delete(item) {
-        this.object = this.object.filter((a) => a !== item)
+        this.object.filter((a) => a !== item)
     }
 
     clear() {
@@ -47,7 +48,7 @@ module.exports = class {
             next: () => ({ value: object[++index], done: !(index in object) })
         };
     };
-    [Symbol.toStringTag] = 'set'
+    get [Symbol.toStringTag]() { return '^_^' }
 
 }
 
