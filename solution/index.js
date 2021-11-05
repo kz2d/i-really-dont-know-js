@@ -8,6 +8,12 @@ module.exports = class MySet {
   has(item) {
     return this._object.includes(item);
   }
+  keys() {
+    return this._object.values();
+  }
+  values() {
+    return this._object.values();
+  }
 
   add(item) {
     if (!this.has(item)) this._object.push(item);
