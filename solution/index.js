@@ -30,7 +30,7 @@ module.exports = class {
         for (const i of this.object) {
             tmp.push([i, i])
         }
-        return tmp
+        return tmp.values()
     }
     forEach(cb, data) {
         let that = data || this
@@ -46,7 +46,5 @@ module.exports = class {
             next: () => ({ value: object[++index], done: !(index in object) })
         };
     };
-
 }
-
 
