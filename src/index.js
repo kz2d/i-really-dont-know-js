@@ -34,8 +34,8 @@ class MySet {
     }
     forEach(cb, data) {
         let that = data || this
-        for (const i of that) {
-            cb(i)
+        for (const i of this.object) {
+            cb.call(that, i)
         }
     }
     [Symbol.iterator]() {
@@ -46,14 +46,9 @@ class MySet {
             next: () => ({ value: object[++index], done: !(index in object) })
         };
     };
+    [Symbol.toStringTag] = 'Set'
 }
 
 
 module.exports = MySet;
 
-// let set = new MySet([1, 2, 3, 3])
-// console.log(set.entries());
-// for (const i of set.entries()) {
-//     console.log(i)
-
-// }

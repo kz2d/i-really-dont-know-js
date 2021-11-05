@@ -82,14 +82,15 @@ describe("MySet ow eah", () => {
         const set = new MySet([4, 8, 15, 15, 16, 23, 42]);
         const [object, data] = preset(set)
         // и кое-что еще
-        console.log(set === set.valueOf()) // true
-        console.log(String(set)) // [object ^_^]
-        console.log(Object.prototype.toString.call(set)) // [object ^_^]
+        expect(set === set.valueOf()).toBe(true) // true
+        expect(String(set)).toBe('[object Set]') // [object ^_^]
+        expect(Object.prototype.toString.call(set)).toBe('[object Set]') // [object ^_^]
 
     })
     it("и кое-что еще", () => {
-        const set = new MySet([4, 8, 15, 15, 16, 23, 42]);
+        const set = new MySet();
         const [object, data] = preset(set)
+        set.delete(data)
         // и кое-что еще
         // есть forEach, который делает какие-то странные вещи...
         set.forEach(function (item) {
